@@ -1,0 +1,24 @@
+<h1>Stories</h1>
+<div class="row">
+    {{#each stories}}
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="card" style="max-width: 50rem;">
+            <div class="card-image">{{{editIcon user ../user _id}}}</div>
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{title}}</strong></h5>
+                <p class="card-text">{{stripTags (truncate body 150)}}</p>
+            </div>
+            <div class="chip" style="width: 60%; margin:0px auto">
+                <img src="{{user.image}}" alt="user-image" style="max-width: 20%; border-radius:50%;">
+                <a href="/stories/user/{{user._id}}">{{user.displayName}}</a>
+            </div>
+            <hr>
+            <div class="card-body">
+                <a class="btn btn-outline-secondary" href="/stories/{{_id}}">Read More</a>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <p>No stories to display</p>
+    {{/each}}
+</div>

@@ -1,0 +1,46 @@
+<div class="alert alert-primary" role="alert">
+  <p><strong>Welcome {{name}}</strong></p>
+  <p>Here are your stories</p>
+</div>
+
+
+{{#if stories}}
+<table class="table table-hover text-center">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each stories}}
+        <tr>
+            <th scope="row">{{formatIndex @index}}</th>
+            <td><a href="/stories/{{_id}}">{{title}}</a></td>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            <td><span class="dash-status">{{status}}</span></td>
+            <td>
+                <div class="container">
+                    <form class="form-inline" action="/stories/{{_id}}" method="POST">
+                        <div class="form-group">
+                            <a href="/stories/edit/{{_id}}" class="btn btn-success text-white"><i
+                                    class="fas fa-edit"></i></a>
+                            <form id="delete-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger text-white"><i
+                                        class="fas fa-trash"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+    {{else}}
+    <p>You have not created any stories</p>
+    {{/if}}
+</table>
+

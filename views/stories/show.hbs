@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-lg-4 col-md-6 col-12">
+        <h3>{{story.title}}{{{editIcon story.user user story._id false}}}</h3>
+        <div class="card story">
+            <div class="card-content">
+                <div class="container">
+                    <span class="card-title">{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}</span>
+                </div>
+                <div class="container">{{{story.body}}}</div>
+                <hr>
+                <div class="conatiner p-2"><a href="" class="btn btn-warning">Open</a></div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="card center-align">
+            <div class="card-content">
+                <div class="img" style="margin 0px auto; "><img src="{{story.user.image}}" style="max-width:200px; border-radius: 50%;"></div>
+                <span class="card-title"><strong>{{story.user.displayName}}</strong></span>
+                <hr>
+            </div>
+            <div class="card-action p-2">
+                <a href="/stories/user/{{story.user._id}}" class="btn btn-primary">More From {{story.user.firstName}}</a>
+            </div>
+        </div>
+    </div>
+</div>

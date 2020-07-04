@@ -1,0 +1,46 @@
+body{
+    /* background-color: aqua; */
+}
+a,a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+p {
+    margin: 10px 0 !important;
+  }
+
+td{
+  text-align: center;
+}
+
+
+
+  
+  .fa-small {
+    font-size: 16px !important;
+  }
+  
+  .btn-float {
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .img-small {
+    width: 180px;
+  }
+
+  .container{
+    text-align: center;
+  }
+
+  .chip{
+    border:solid grey 2px;
+    border-radius: 30px;
+    opacity: 1;
+    width: auto;
+  }
+
+  .chip:hover{
+    opacity: .8;
+  }
